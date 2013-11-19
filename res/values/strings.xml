@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MyDulwich</string>
+    <string name="action_settings">Settings</string>
+    <string name="dulwich_college">Dulwich College</string>
+    <string name="app_tagline">MyDulwich for Android</string>
+    <string name="am_student">I am a student</string>
+    <string name="am_teacher">I am a teacher</string>
+    <string name="am_parent">I am a parent</string>
+    <string name="am_guest">I am a guest</string>
+
+</resources>
