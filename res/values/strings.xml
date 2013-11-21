@@ -9,5 +9,15 @@
     <string name="am_teacher">I am a teacher</string>
     <string name="am_parent">I am a parent</string>
     <string name="am_guest">I am a guest</string>
+    <string name="am_lowerschool">I\'m in the Lower School</string>
+    <string name="am_middleschool">I\'m in the Middle School</string>
+    <string name="am_upperschool">I\'m in the Upper School</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="loading">Loading&#8230;</string>
+    <string name="activity_studenthome">activity_studenthome</string>
+    <string name="label_home">Home</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
 
 </resources>

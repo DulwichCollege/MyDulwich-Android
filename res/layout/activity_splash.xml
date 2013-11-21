@@ -9,7 +9,7 @@
     android:gravity="bottom|center_horizontal"
     android:orientation="vertical"
     tools:context=".Splash" >
-
+	
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="match_parent"
@@ -22,48 +22,92 @@
         android:visibility="gone" />
 
     <Button
-        android:id="@+id/Button1"
+        android:id="@+id/b_student"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:background="@drawable/whitebutton"
+        android:onClick="is_student"
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
         android:text="@string/am_student"
         android:textSize="20sp" />
 
     <Button
-        android:id="@+id/Button2"
+        android:id="@+id/b_teacher"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:background="@drawable/whitebutton"
+        android:onClick="is_teacher"
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
         android:text="@string/am_teacher"
         android:textSize="20sp" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/b_parent"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:background="@drawable/whitebutton"
+        android:onClick="is_parent"
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
         android:text="@string/am_parent"
         android:textSize="20sp" />
 
     <Button
-        android:id="@+id/Button4"
+        android:id="@+id/b_guest"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
         android:layout_marginTop="5dp"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/whitebutton"
+        android:onClick="is_guest"
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
         android:text="@string/am_guest"
         android:textSize="20sp" />
+    
+    <Button
+        android:id="@+id/b_lowerschool"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/whitebutton"
+        android:onClick="is_lowerschool"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="@string/am_lowerschool"
+        android:textSize="20sp"
+        android:visibility="gone" />
+    
+    <Button
+        android:id="@+id/b_middleschool"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/whitebutton"
+        android:onClick="is_middleschool"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="@string/am_middleschool"
+        android:textSize="20sp"
+        android:visibility="gone" />
+    
+    <Button
+        android:id="@+id/b_upperschool"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/whitebutton"
+        android:onClick="is_upperschool"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="@string/am_upperschool"
+        android:textSize="20sp"
+        android:visibility="gone" />
 
 </LinearLayout>
