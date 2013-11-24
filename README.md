@@ -1,4 +1,4 @@
-MyDulwich-Android
+MyDulwich for Android
 =================
 
 It's an App.
