@@ -2,7 +2,7 @@ package uk.org.dulwich.mydulwich;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.DialogFragment;
+import android.support.v4.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
@@ -32,13 +32,13 @@ public class LoginDialog extends DialogFragment {
             public void onClick(DialogInterface dialog, int id) {
             	String username = null, password = null;
             	username = ((EditText) view.findViewById(R.id.Username)).getText().toString();
-	            if (username.trim().isEmpty() || username.contains(" "))
+	            if (username.trim().length() == 0 || username.contains(" "))
 	            {
 	            	Toast.makeText(getActivity(), "Please enter a valid username", Toast.LENGTH_SHORT);
 	            	return;
 	            }
             	password = ((EditText) view.findViewById(R.id.Password)).getText().toString();
-	            if (password.isEmpty())
+	            if (password.length() == 0 )
 	            {
 	            	Toast.makeText(getActivity(), "Please enter a valid password", Toast.LENGTH_SHORT);
 	            	return;
@@ -48,8 +48,9 @@ public class LoginDialog extends DialogFragment {
                 Toast.makeText(getActivity(), "Logging in...", Toast.LENGTH_SHORT).show();
             	dialog.dismiss();
             }
-        });
+        }).setCancelable(false);
         // Create the AlertDialog object and return it
+        
         return builder.create();
 	}
 }

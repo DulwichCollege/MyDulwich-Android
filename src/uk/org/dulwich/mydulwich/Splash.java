@@ -2,11 +2,11 @@ package uk.org.dulwich.mydulwich;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.preference.PreferenceManager;
+//import android.preference.PreferenceManager;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
+//import android.content.SharedPreferences;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
@@ -17,14 +17,14 @@ import android.widget.Toast;
 
 public class Splash extends Activity {
 	private static CharSequence nImpl = "Not Implemented (Yet...)";
-	private SharedPreferences sharedPref;
+	//private SharedPreferences sharedPref;
 	private Handler handler;
 	private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        //sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         handler = new Handler();
         context = getApplicationContext();
         setContentView(R.layout.activity_splash);

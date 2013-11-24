@@ -4,8 +4,8 @@ import android.app.Activity;
 
 public class Account
 {
-	private static String username = "";
-	private static String password = "";
+	private static String username = "olagbaiyeb2";
+	private static String password = "dyne";
 	
 	public Account()
 	{

@@ -1,9 +1,10 @@
 package uk.org.dulwich.mydulwich;
 
+import java.util.List;
+
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.util.Log;
 
 public class AccountThread extends Thread {
 	
@@ -33,7 +34,7 @@ public class AccountThread extends Thread {
 	private boolean login() {
 		StudentHome.instance.runOnUiThread(new Runnable(){
 			public void run() {
-				(new LoginDialog()).setHandler(handler).show(StudentHome.instance.getFragmentManager(), "login");
+				(new LoginDialog()).setHandler(handler).show(StudentHome.instance.getSupportFragmentManager(), "login");
 			}
 		});
 		return true;
@@ -45,11 +46,8 @@ public class AccountThread extends Thread {
 	
 	private boolean getNotices() {
 		try {
-        	Log.v(this.getClass().getName(), "hmm");
-        	String data = (new Request(StudentHome.instance, ApiList.notices)).get();
-        	Log.v(this.getClass().getName(), data);
+        	List<Notice> data = (new Request(StudentHome.instance, ApiList.notices)).notices();
         	StudentHome.handler.sendMessage(handler.obtainMessage(Msg.GOTNOTICES, data));
-        	Log.v(this.getClass().getName(), "yup");
         } catch (BadLogin e) {
         	handler.sendEmptyMessage(Msg.LOGIN);
         } catch (Exception e) {/* ugh */

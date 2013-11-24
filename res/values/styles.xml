@@ -17,8 +17,10 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
     
-    <style name="DialogTheme" parent="android:Theme.Holo.Light.Dialog">
-        <!-- Stuff -->
+    <style name="DrawerMenu">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">?android:attr/actionMenuTextColor</item>
     </style>
 
 </resources>
