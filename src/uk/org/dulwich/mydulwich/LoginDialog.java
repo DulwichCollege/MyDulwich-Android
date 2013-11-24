@@ -43,7 +43,7 @@ public class LoginDialog extends DialogFragment {
 	            	Toast.makeText(getActivity(), "Please enter a valid password", Toast.LENGTH_SHORT);
 	            	return;
 	            }
-            	Account.setCredentials(username, password);
+            	Account.setCredentials(StudentHome.instance, username, password);
             	handler.sendEmptyMessage(Msg.LOGGEDIN);
                 Toast.makeText(getActivity(), "Logging in...", Toast.LENGTH_SHORT).show();
             	dialog.dismiss();

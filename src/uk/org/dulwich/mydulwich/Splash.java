@@ -2,11 +2,10 @@ package uk.org.dulwich.mydulwich;
 
 import android.os.Bundle;
 import android.os.Handler;
-//import android.preference.PreferenceManager;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-//import android.content.SharedPreferences;
+import android.content.SharedPreferences;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
@@ -17,24 +16,39 @@ import android.widget.Toast;
 
 public class Splash extends Activity {
 	private static CharSequence nImpl = "Not Implemented (Yet...)";
-	//private SharedPreferences sharedPref;
 	private Handler handler;
 	private Context context;
+	private SharedPreferences settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         handler = new Handler();
         context = getApplicationContext();
-        setContentView(R.layout.activity_splash);
-        handler.postDelayed(new Runnable() {
-        	
-            @Override
-            public void run() {
-                ascend();
-            }
-        }, 1000);
+        settings = getSharedPreferences("settings", Context.MODE_PRIVATE);
+        Account.setCredentials(this, settings.getString("lastUser", ""), settings.getString("lastPass", ""));
+        switch(settings.getInt("userType", 0))
+        {
+        	case 0:
+                setContentView(R.layout.activity_splash);
+		        handler.postDelayed(new Runnable() {
+		        	
+		            @Override
+		            public void run() {
+		                ascend();
+		            }
+		        }, 1000);
+		        break;
+        	case 1:
+        		is_student(null);
+        		break;
+        	case 2:
+        		is_teacher(null);
+        		break;
+        	case 3:
+        		is_parent(null);
+        		break;
+        }
     }
     
     private void ascend() // X/(1+e^(t-5)) for 10t
@@ -117,21 +131,28 @@ public class Splash extends Activity {
     
     public void is_student(View view)
     {
-    	bobDown();
-    	handler.postDelayed(new Runnable() {
-        	
-            @Override
-            public void run() {
-            	((Button) findViewById(R.id.b_student)).setVisibility(View.GONE);
-            	((Button) findViewById(R.id.b_teacher)).setVisibility(View.GONE);
-            	((Button) findViewById(R.id.b_parent)).setVisibility(View.GONE);
-            	((Button) findViewById(R.id.b_guest)).setVisibility(View.GONE);
-            	((Button) findViewById(R.id.b_lowerschool)).setVisibility(View.VISIBLE);
-            	((Button) findViewById(R.id.b_middleschool)).setVisibility(View.VISIBLE);
-            	((Button) findViewById(R.id.b_upperschool)).setVisibility(View.VISIBLE);
-                bobUp();
-            }
-        }, 1000);
+    	if (view != null)
+    	{
+	    	bobDown();
+    		SharedPreferences.Editor editor = settings.edit();
+    		editor.putInt("userType", 1);
+    		editor.commit();
+	    	handler.postDelayed(new Runnable() {
+	        	
+	            @Override
+	            public void run() {
+	            	((Button) findViewById(R.id.b_student)).setVisibility(View.GONE);
+	            	((Button) findViewById(R.id.b_teacher)).setVisibility(View.GONE);
+	            	((Button) findViewById(R.id.b_parent)).setVisibility(View.GONE);
+	            	((Button) findViewById(R.id.b_guest)).setVisibility(View.GONE);
+	            	((Button) findViewById(R.id.b_lowerschool)).setVisibility(View.VISIBLE);
+	            	((Button) findViewById(R.id.b_middleschool)).setVisibility(View.VISIBLE);
+	            	((Button) findViewById(R.id.b_upperschool)).setVisibility(View.VISIBLE);
+	                bobUp();
+	            }
+	        }, 1000);
+    	}
+    	else showStudenthome();
     }
     
     public void is_teacher(View view)
@@ -152,22 +173,33 @@ public class Splash extends Activity {
     
     public void is_lowerschool(View view)
     {
+    	bobDown();
+		SharedPreferences.Editor editor = settings.edit();
+		editor.putInt("studentType", 1);
+		editor.commit();
     	showStudenthome();
     }
     
     public void is_middleschool(View view)
     {
+    	bobDown();
+		SharedPreferences.Editor editor = settings.edit();
+		editor.putInt("studentType", 2);
+		editor.commit();
     	showStudenthome();
     }
     
     public void is_upperschool(View view)
     {
+    	bobDown();
+		SharedPreferences.Editor editor = settings.edit();
+		editor.putInt("studentType", 3);
+		editor.commit();
     	showStudenthome();
     }
     
     public void showStudenthome()
     {
-    	bobDown();
     	final Intent intent = new Intent(this, StudentHome.class);
     	handler.postDelayed(new Runnable() {
         	

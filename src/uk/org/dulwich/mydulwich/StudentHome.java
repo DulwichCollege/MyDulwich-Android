@@ -3,8 +3,12 @@ package uk.org.dulwich.mydulwich;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -13,15 +17,15 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
-import android.text.Html;
-import android.text.Spanned;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -33,6 +37,8 @@ public class StudentHome extends ActionBarActivity {
 	
 	public static StudentHome instance;
 	public static Handler handler;
+	
+    public SharedPreferences settings;
 	private String[] drawerItems;
 	private DrawerLayout drawerLayout;
 	private ListView drawerList;
@@ -67,6 +73,9 @@ public class StudentHome extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 		setContentView(R.layout.activity_studenthome);
+
+		settings = getSharedPreferences("settings", Context.MODE_PRIVATE);
+		
 		final ListView noticeList = (ListView) findViewById(R.id.sh_Notices);
 		LayoutInflater inflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View header = inflater.inflate(R.layout.header, noticeList, false);
@@ -150,6 +159,7 @@ public class StudentHome extends ActionBarActivity {
 	}
 	
 	@Override
+	@SuppressLint("SetJavaScriptEnabled")
 	public boolean onOptionsItemSelected(MenuItem item)
 	{
 		if (drawerToggle.onOptionsItemSelected(item)) {
@@ -158,11 +168,13 @@ public class StudentHome extends ActionBarActivity {
 		switch (item.getItemId())
 		{
 		    case R.id.action_settings:
-		        ((ImageView) findViewById(R.id.sh_LoadingIcon)).setAnimation(null);
-		        ((LinearLayout) findViewById(R.id.sh_Loading)).setVisibility(View.GONE);
-		        ((ListView) findViewById(R.id.sh_Notices)).setVisibility(View.VISIBLE);
-				notices.notifyDataSetChanged();
+		        SharedPreferences.Editor editor = settings.edit();
+		        editor.clear();
+		        editor.commit();
+		        Toast.makeText(this, "All preferences cleared!", Toast.LENGTH_LONG).show();
 		        return true;
+		    case R.id.action_about:
+		    	startActivityForResult(new Intent(this, HelpActivity.class), 0);
 		    default:
 		        return super.onOptionsItemSelected(item);
 		}

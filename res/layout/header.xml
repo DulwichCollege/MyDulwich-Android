@@ -1,0 +1,14 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+	<!-- https://github.com/LarsWerkman/QuickReturnListView/tree/547cc12df2f4af69fe4e823949c3773cdfd21f2b/src/com/larswerkman/quickreturnlistview -->
+    <ImageView
+        android:id="@+id/NoticeBanner"
+        android:layout_width="wrap_content"
+        android:layout_height="160dp"
+        android:layout_gravity="top"
+        android:layout_margin="0dp"
+        android:contentDescription="@string/dulwich_college"
+        android:scaleType="fitXY"
+        android:src="@drawable/banner" />
+</FrameLayout>

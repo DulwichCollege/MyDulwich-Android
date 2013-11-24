@@ -991,19 +991,21 @@ containing a value of this type.
         public static final int draweritem=0x7f02005a;
         public static final int draweritem_notselected=0x7f02005b;
         public static final int draweritem_selected=0x7f02005c;
-        public static final int ic_drawer=0x7f02005d;
-        public static final int ic_launcher=0x7f02005e;
-        public static final int loading=0x7f02005f;
-        public static final int loginbanner=0x7f020060;
-        public static final int splash=0x7f020061;
-        public static final int whitebutton=0x7f020062;
+        public static final int gp=0x7f02005d;
+        public static final int ic_drawer=0x7f02005e;
+        public static final int ic_launcher=0x7f02005f;
+        public static final int loading=0x7f020060;
+        public static final int loginbanner=0x7f020061;
+        public static final int splash=0x7f020062;
+        public static final int whitebutton=0x7f020063;
     }
     public static final class id {
-        public static final int NoticeBanner=0x7f05004e;
+        public static final int NoticeBanner=0x7f050052;
         public static final int NoticeView=0x7f050046;
-        public static final int Password=0x7f05004d;
+        public static final int Password=0x7f050051;
         public static final int SplashLayout=0x7f05003c;
-        public static final int Username=0x7f05004c;
+        public static final int Username=0x7f050050;
+        public static final int action_about=0x7f050057;
         public static final int action_bar=0x7f05001c;
         public static final int action_bar_activity_content=0x7f050015;
         public static final int action_bar_container=0x7f05001b;
@@ -1015,7 +1017,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f050016;
         public static final int action_menu_presenter=0x7f050017;
         public static final int action_mode_close_button=0x7f050024;
-        public static final int action_settings=0x7f050052;
+        public static final int action_settings=0x7f050056;
         public static final int activity_chooser_view_content=0x7f050025;
         public static final int always=0x7f05000b;
         public static final int b_guest=0x7f050041;
@@ -1032,12 +1034,13 @@ containing a value of this type.
         public static final int dialog=0x7f05000e;
         public static final int disableHome=0x7f050008;
         public static final int drawer_layout=0x7f050045;
-        public static final int drawer_list_item_textview=0x7f05004f;
+        public static final int drawer_list_item_textview=0x7f050053;
         public static final int dropdown=0x7f05000f;
         public static final int edit_query=0x7f050030;
         public static final int end=0x7f050013;
         public static final int expand_activities_button=0x7f050026;
         public static final int expanded_menu=0x7f05002c;
+        public static final int googlePlus=0x7f05004f;
         public static final int home=0x7f050014;
         public static final int homeAsUp=0x7f050005;
         public static final int icon=0x7f05002a;
@@ -1050,9 +1053,9 @@ containing a value of this type.
         public static final int never=0x7f050009;
         public static final int none=0x7f050010;
         public static final int normal=0x7f050000;
-        public static final int noticeContent=0x7f050051;
+        public static final int noticeContent=0x7f050055;
         public static final int noticeImage=0x7f05003d;
-        public static final int noticeTitle=0x7f050050;
+        public static final int noticeTitle=0x7f050054;
         public static final int progress_circular=0x7f050018;
         public static final int progress_horizontal=0x7f050019;
         public static final int radio=0x7f05002f;
@@ -1077,6 +1080,9 @@ containing a value of this type.
         public static final int split_action_bar=0x7f05001e;
         public static final int submit_area=0x7f050039;
         public static final int tabMode=0x7f050002;
+        public static final int textView1=0x7f05004c;
+        public static final int textView2=0x7f05004d;
+        public static final int textView3=0x7f05004e;
         public static final int title=0x7f05002b;
         public static final int top_action_bar=0x7f050020;
         public static final int up=0x7f050021;
@@ -1134,14 +1140,16 @@ containing a value of this type.
         public static final int abc_search_view=0x7f030016;
         public static final int activity_splash=0x7f030017;
         public static final int activity_studenthome=0x7f030018;
-        public static final int dialog_login=0x7f030019;
-        public static final int header=0x7f03001a;
-        public static final int listitem_drawer=0x7f03001b;
-        public static final int notice=0x7f03001c;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001d;
+        public static final int betatest=0x7f030019;
+        public static final int dialog_login=0x7f03001a;
+        public static final int header=0x7f03001b;
+        public static final int listitem_drawer=0x7f03001c;
+        public static final int notice=0x7f03001d;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001e;
     }
     public static final class menu {
-        public static final int home=0x7f0d0000;
+        public static final int help=0x7f0d0000;
+        public static final int home=0x7f0d0001;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1184,6 +1192,7 @@ containing a value of this type.
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f0a000b;
+        public static final int action_about=0x7f0a0020;
         public static final int action_settings=0x7f0a000e;
         public static final int activity_studenthome=0x7f0a001a;
         public static final int am_guest=0x7f0a0014;
@@ -1202,6 +1211,7 @@ containing a value of this type.
         public static final int loading=0x7f0a0019;
         public static final int login=0x7f0a001e;
         public static final int password=0x7f0a001d;
+        public static final int title_activity_help=0x7f0a0021;
         public static final int username=0x7f0a001c;
     }
     public static final class style {

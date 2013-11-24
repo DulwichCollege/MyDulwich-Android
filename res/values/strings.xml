@@ -19,10 +19,14 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
+
     <string-array name="panels">
-        <item >Dashboard</item>
-        <item >Notices</item>
+        <item>Dashboard</item>
+        <item>Notices</item>
     </string-array>
+
     <string name="description">An app for prospective and current students or parents of Dulwich College.</string>
+    <string name="action_about">About/Help</string>
+    <string name="title_activity_help">Beta Testing</string>
 
 </resources>
